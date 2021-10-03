@@ -1,0 +1,123 @@
+/* global varaibles  */
+:root {
+  /* primary */
+  --Red: hsl(0, 78%, 62%);
+  --Cyan: hsl(180, 62%, 55%);
+  --Orange: hsl(34, 97%, 64%);
+  --Blue: hsl(212, 86%, 64%);
+  /* neutral */
+  --Very-Dark-Blue: hsl(234, 12%, 34%);
+  --Grayish-Blue: hsl(229, 6%, 66%);
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+  /* body size  */
+  --size: 15px;
+}
+/* global styles */
+* {
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+/*styles*/
+body {
+  background-color: var(--Very-Light-Gray);
+}
+main {
+  padding: 20px 150px;
+}
+main section {
+  text-align: center;
+}
+main section h1,
+main section h2 {
+  font-size: 30px;
+}
+main section h1 {
+  font-weight: lighter;
+  margin: 20px 0 0;
+  color: var(--Very-Dark-Blue);
+}
+main section h2 {
+  margin: 0;
+}
+main section p {
+  color: var(--Grayish-Blue);
+  max-width: 500px;
+  line-height: 1.6;
+  margin: 10px auto;
+  font-size: var(--size);
+}
+main .boxes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 400px));
+  grid-template-rows: auto;
+  align-items: center;
+  justify-items: center;
+  gap: 0px 10px;
+  margin: 50px 0;
+  max-width: 100%;
+  justify-content: center;
+}
+main .boxes > div {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  padding: 30px;
+}
+main .boxes > div:nth-child(1) {
+  border-top: 4px solid var(--Cyan);
+  grid-column: 1/2;
+  grid-row: 1/3;
+}
+main .boxes > div:nth-child(4) {
+  border-top: 4px solid var(--Blue);
+  grid-column: 3/4;
+  grid-row: 1/3;
+}
+main .boxes > div:nth-child(2) {
+  border-top: 4px solid var(--Red);
+  margin-bottom: 20px;
+  grid-area: 1/2/2/3;
+}
+main .boxes > div:nth-child(3) {
+  border-top: 4px solid var(--Orange);
+  grid-area: 2/2/4/3;
+}
+main .boxes > div h3 {
+  text-transform: capitalize;
+  margin: 10px 0 0;
+}
+main .boxes > div p {
+  color: var(--Grayish-Blue);
+  font-size: var(--size);
+  line-height: 1.6;
+  max-width: 33ch;
+}
+main .boxes > div img {
+  width: 50px;
+  align-self: flex-end;
+}
+/*mobile and small screens*/
+@media (max-width: 980px) {
+  main {
+    padding: 20px 15px;
+  }
+  main section h1,
+  main section h2 {
+    font-size: 18px;
+  }
+  main .boxes {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+  main .boxes > div:nth-child(1),
+  main .boxes > div:nth-child(2),
+  main .boxes > div:nth-child(3),
+  main .boxes > div:nth-child(4) {
+    grid-area: auto;
+    margin: 10px auto;
+  }
+}
